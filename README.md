@@ -14,7 +14,7 @@ This setup will run jenkins on a docker as a separate dedicated container, which
 # Getting started
 ## First of all, we need to create a Dockerfile, which we will use to build our own jenkins dedicated image as follows:
 
-No alt text provided for this image
+![Dockerfile](https://github.com/aelit31134/Automated-Produciton-Server-setup-with-Testing/blob/master/Setup_images_project3/dockerfile.PNG)
 
 * Create the above file in any folder(/root/project3 in my case) you would like and save it as Dockerfile (make sure the D is upper-case)
 * Now we will build this image using the following command and at the end of it we would have created our own jenkins docker image:
@@ -28,7 +28,7 @@ No alt text provided for this image
 
       docker image ls
 
-No alt text provided for this image
+![dockerimages](https://github.com/aelit31134/Automated-Produciton-Server-setup-with-Testing/blob/master/Setup_images_project3/imagesdocker.PNG)
 
 * Now, we need to download some docker images that we will be needing for deployment, you can find images at Docker Hub
 
@@ -44,29 +44,29 @@ No alt text provided for this image
                      --name jens
                             jenkins:v1
 
-No alt text provided for this image
+![jenkinsrun](https://github.com/aelit31134/Automated-Produciton-Server-setup-with-Testing/blob/master/Setup_images_project3/jenscommandpass0.PNG)
 
 * The -p tag is used for PATing where we are exposing the container to outside world using the port 1234
 * We are using the -v tag three times, the first two times are to help us access docker and run containers from inside our jenkins container(a kind of docker-in-docker). Instead of downloading docker insider the container, we are just binding the outside docker libraries insider the container two let it access docker installed on the host system. This is beneficial as we our image will be less bulky and we can use the images already downloaded on the host system, also use the host storage for other contianers we run from inside(this will become more clear as we proceed with the process)
 * The third -v tag is used to bind a host folder to a container folder for sharing files with the inside docker containers
 * Copy the first time admin password
 
-No alt text provided for this image
+![adminpass](https://github.com/aelit31134/Automated-Produciton-Server-setup-with-Testing/blob/master/Setup_images_project3/jenscommandpass.PNG)
 
 * Go to a browser and enter the IP of your machine with port number and after jenkins loads, enter the password given above
 
-No alt text provided for this image
+![jenspass](https://github.com/aelit31134/Automated-Produciton-Server-setup-with-Testing/blob/master/Setup_images_project3/jenspass.PNG)
 
 * Then proceed with skipping the pugins installation and start jenkins
 * Now go to configure jenkins and change the password for the user, and login again
 
-No alt text provided for this image
+![configpass](https://github.com/aelit31134/Automated-Produciton-Server-setup-with-Testing/blob/master/Setup_images_project3/jensconfigurepass.PNG)
 
-No alt text provided for this image
+![passconfig](https://github.com/aelit31134/Automated-Produciton-Server-setup-with-Testing/blob/master/Setup_images_project3/jensconfigpass.PNG)
 
 * Now install the plugins from configure>manage plugins
 
-No alt text provided for this image
+![plugins](https://github.com/aelit31134/Automated-Produciton-Server-setup-with-Testing/blob/master/Setup_images_project3/jenspluginsinstall.PNG)
 
 * download the following plugins:
    * Github
